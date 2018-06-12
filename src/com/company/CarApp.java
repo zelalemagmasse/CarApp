@@ -6,13 +6,13 @@ public class CarApp {
 
     public static void main(String[] args) {
 	// write your code here
-        Car newCar = new Car("RED",2018,"PORSH",5,250);
+        Car firstCar = new Car("RED",2018,"PORSH",5,250);
+        Car secondCar=new Car("BLUE",2016,"BMW",8,350);
 
-       String message=newCar.carModel("blue","Marc.Benz",5,2010);
-        System.out.println(message);
-        newCar.setSpeed(250);
-        System.out.println(newCar.speed());
-        System.out.println(newCar.carModel());
+       String message1=firstCar.carModel();
+        System.out.println(message1);
+        String message2=secondCar.carModel();
+        System.out.println(message2);
 
     }
 }
