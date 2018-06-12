@@ -1,49 +1,93 @@
 package com.company;
 
-public class Car {
+import javax.print.DocFlavor;
+
+public class Car extends Vehicle  {
+    private String color;
+    private int yearOfMake;
     private String brandName;
-    private String colo;
-    private String seatTexture;
-    private String roofType;
+    private int numberOfSeat;
+    private double speed;
 
-    public Car(String brandName, String colo, String seatTexture, Integer numberOfSeat) {
+    public Car(String color, int yearOfMake, String brandName, int numberOfSeat, double speed) {
+        super(color,yearOfMake,brandName);
+        this.color = color;
+        this.yearOfMake = yearOfMake;
         this.brandName = brandName;
-        this.colo = colo;
-        this.seatTexture = seatTexture;
+        this.numberOfSeat = numberOfSeat;
+        this.speed = speed;
+    }
+
+    @Override
+    public String getBrandName() {
+        return brandName;
+    }
+
+    @Override
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
+    @Override
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getNumberOfSeat() {
+        return numberOfSeat;
+    }
+
+    public void setNumberOfSeat(int numberOfSeat) {
         this.numberOfSeat = numberOfSeat;
     }
 
-    public Car(String brandName, String colo, Integer numberOfSeat) {
-        this.brandName = brandName;
-        this.colo = colo;
-        this.numberOfSeat = numberOfSeat;
-
+    @Override
+    public int getYearOfMake() {
+        return yearOfMake;
     }
 
-    public Car(String brandName, String colo, String seatTexture, String roofType, String transmissionSystem, String towHitch, Integer numberOfSeat) {
-        this.brandName = brandName;
-        this.colo = colo;
-        this.seatTexture = seatTexture;
-        this.roofType = roofType;
-        this.transmissionSystem = transmissionSystem;
-        this.towHitch = towHitch;
-        this.numberOfSeat = numberOfSeat;
+    @Override
+    public void setYearOfMake(int yearOfMake) {
+        this.yearOfMake = yearOfMake;
     }
 
-    public Car(String brandName, String colo, String seatTexture, String transmissionSystem, Integer numberOfSeat) {
-        this.brandName = brandName;
-        this.colo = colo;
-        this.seatTexture = seatTexture;
-        this.transmissionSystem = transmissionSystem;
-        this.numberOfSeat = numberOfSeat;
-
+    public double getSpeed() {
+        return speed;
     }
 
-    private String  transmissionSystem;
-    private String  towHitch;
-    private Integer numberOfSeat;
+    public void setSpeed(double speed) {
+        this.speed = speed;
+    }
+
 
     public Car() {
+
     }
+
+
+    public static String  carModel(String color, String brandName, Integer numberOfSeat, int yearOfMake){
+
+        return "This  " +brandName+ "  Car is one of the best car out there with " + color +
+                " color,  and it has " + numberOfSeat + "  number of seat configuration and made in " + yearOfMake;
+    }
+
+    public String speed(){
+        double speed=getSpeed();
+        return "it is moving with a speed of " + speed ;
+    }
+
+    public  String  carModel(){
+
+        return "This  " +this.brandName+ "  Car is one of the best car out there with " + this.color + " color,  and it has " +
+                this.numberOfSeat + "  number of seat configuration and made in " + this.yearOfMake;
+    }
+
+
+
 
 }
